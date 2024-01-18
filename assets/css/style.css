@@ -1,0 +1,279 @@
+/* Definição de variáveis de cor e espaçamento global */
+:root {
+
+    /* tema escuro */
+    --primary-color-dark: #ffa500; 
+    --secondary-color-dark: #FED001;
+    --text-color-dark: #e7e7e7; 
+    --background-gradient-dark: linear-gradient(#9e57df,#e644c5,#f43736);
+    --background-color-dark: #000000;
+
+
+    --link-gradient-dark: linear-gradient(#ffa500, #3a2600);
+    --link-gradient-hover-dark: linear-gradient(#fed001, #ffa500);
+    --link-text-dark: #e7e7e7;
+    --link-text-hover-dark: #000;
+            
+    /* tema claro */
+    --primary-color-light: linear-gradient(#fff,#000);
+    --secondary-color-light: linear-gradient(#000, #fff); 
+    --text-color-light: #e7e7e7;
+    --background-gradient-light: linear-gradient(#9e57df,#e644c5,#f43736);
+    --background-color-light: var(--background-gradient-light);
+
+    --link-gradient-light: linear-gradient(#fff, #fff);
+    --link-gradient-hover-light: transparent;
+    --link-text-light: #000;
+    --link-text-hover-light: #fff;
+
+
+    /* padrao aplicado */
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --text-color: var(--text-color-dark);
+    --background-color: var(--background-color-dark);
+
+    --link-gradient: var(--link-gradient-dark);
+    --link-gradient-hover: var(--link-gradient-hover-dark);
+    --link-text: var(--link-text-dark);
+    --link-text-hover: var(--link-text-hover-dark);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    font: 400 62.5% 'Inter', sans-serif;
+}
+
+.dark-theme {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --text-color: var(--text-color-dark);
+    --background-color: var(--background-color-dark);
+
+    --link-gradient: var(--link-gradient-dark);
+    --link-gradient-hover: var(--link-gradient-hover-dark);
+    --link-text: var(--link-text-dark);
+    --link-text-hover: var(--link-text-hover-dark);
+}
+
+.light-theme {
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --text-color: var(--text-color-light);
+    --background-color: var(--background-color-light);
+
+    --link-gradient: var(--link-gradient-light);
+    --link-gradient-hover: var(--link-gradient-hover-light);
+    --link-text: var(--link-text-light);
+    --link-text-hover: var(--link-text-hover-light);
+}
+
+#toggle-theme {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: radial-gradient(circle at 100% 50%, #fff 50%, #000 50%);
+    transition: background 0.3s ease;
+
+}
+
+.light-theme #toggle-theme {
+    background: radial-gradient(circle at 0% 50%, #000 50%, #fff 50%);
+}
+
+#app{
+    background: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    text-align: center;
+    min-width: 30rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.header-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+    width: 20%;
+    max-width: 20rem;
+    margin-bottom: 1rem;
+}
+
+
+#foto-perfil {
+    width: 30%;
+    max-width: 40rem;
+    margin: 2rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 5%; 
+    height: 5%; 
+    max-width: 5rem;
+    max-height: 5rem;
+    margin: .5rem;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    transition: transform 0.3s ease; /* Adicionado para suavizar a transição */
+    transform-origin: center center; /* Define o ponto de transformação no centro */
+ 
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Ajuste o valor conforme necessário para o efeito desejado */
+}
+
+.link-icon {
+    text-decoration: none;
+}
+
+.icon-youTube {
+    color: #c4302b;
+}
+
+.icon-instagram {
+    color: #b700ff;
+}
+
+.icon-linkedin {
+    color: #0e76a8;
+}
+
+.icon-github {
+    color: #c7c7c7;
+}
+
+.main-section {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+.main-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-top: 3rem;
+}
+
+.main-paragrafo {
+    font-size: 1.5rem;
+    max-width: 30rem;
+    margin: 0 auto; /* Adicionado para centralizar */
+    width: 100%;   /* Adicionado para manter o tamanho máximo de 50rem */
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    width: 80%;
+    max-width: 75rem;   
+    
+
+    
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    color: var(--link-text);
+    text-transform: uppercase;
+    text-decoration: none;
+    /* background-image: linear-gradient(#017bde, #00203a); */
+    /* background-image: linear-gradient(var(--primary-color),#3a2600); */
+    background: var(--link-gradient);
+    margin: .5rem;
+    padding: 2rem .5rem;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    transition: transform 0.3s ease; /* Adicionado para suavizar a transição */
+    transform-origin: center center; /* Define o ponto de transformação no centro */
+    
+  
+}
+
+.nav-link:hover {
+    transform: scale(1.1); /* Ajuste o valor conforme necessário para o efeito desejado */
+    box-shadow: -1px 1px 5px #fff;
+    color: var(--link-text-hover);
+    /* background-image: linear-gradient(var(--secondary-color), var(--primary-color)); */
+    background-image: var(--link-gradient-hover);
+}
+
+.line {
+    width: 20rem;
+    height: 1px;
+    margin: 4rem auto;
+    background-color: var(--text-color);
+}
+
+.footer {
+    font-size: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 50em) {
+    
+    .header-img {
+        display: flex;
+        flex-direction: row-reverse; /* Invertendo a ordem na linha */
+        align-items: start; /* Centralizando verticalmente */
+        justify-content: space-between; /* Centralizando horizontalmente */  
+    }
+
+    #logo {
+        width: 20%;
+        max-width: 20rem;
+        margin: 3rem;
+    }
+
+    #foto-perfil {
+        flex-grow: 1;
+        width: 30%;
+        max-width: 40rem;
+        margin: 5rem auto; /* Centralizando horizontalmente */      
+    }
+
+    #toggle-theme {
+        position: static;
+        margin: 3rem;
+        margin-left: 15rem;
+        border: 2px solid #fff;
+    }
+
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .main-paragrafo {
+        font-size: 2.5rem;
+        max-width: 65rem;
+    }
+
+    .nav-link {
+        font-size: 2.5rem;
+        margin: 1rem;
+    }
+}
+
+
